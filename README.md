@@ -2,9 +2,9 @@
 
 Simple games created in flutter
 
-# UI
+## UI
 
-<table border="0px">
+<table>
   <tr>
     <td>
       <img src="https://user-images.githubusercontent.com/93490214/148225716-1ecb3d86-fabe-4696-9563-c1e457adf4b5.jpg" width="300" height="616" title="Home Page">
