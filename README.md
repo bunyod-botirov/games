@@ -2,7 +2,7 @@
 
 Simple games created in flutter
 
-## UI
+# UI
 
 <table border="0px">
   <tr>
