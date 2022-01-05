@@ -32,8 +32,8 @@ class HomePage extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         title: GradientText(
           'Games',
-          style: const TextStyle(
-            fontSize: 30,
+          style: TextStyle(
+            fontSize: MediaQuery.of(context).size.width * 0.1,
             fontWeight: FontWeight.bold,
           ),
           colors: const <Color>[
@@ -61,18 +61,18 @@ class HomePage extends StatelessWidget {
             child: ListTile(
               title: Text(
                 _games[index],
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.green,
-                  fontSize: 20,
+                  fontSize: MediaQuery.of(context).size.width * 0.06,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               subtitle: Row(
                 children: <Widget>[
-                  const Icon(
+                  Icon(
                     Icons.person,
                     color: Colors.blue,
-                    size: 20,
+                    size: MediaQuery.of(context).size.width * 0.05,
                   ),
                   Text(
                     "${_players[index]} Player",

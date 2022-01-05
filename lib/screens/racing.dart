@@ -19,22 +19,22 @@ class _RacingGameState extends State<RacingGame> {
       appBar: AppBar(
         backgroundColor: Colors.green,
         elevation: 0,
-        title: const Text("Don Don Ziki"),
+        title: const Text("Racing Game"),
         actions: <Widget>[
           Center(
             widthFactor: 1.2,
             child: Text(
               "Y: $_playerScore | B: $_botScore",
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: MediaQuery.of(context).size.width * 0.05,
               ),
             ),
           ),
         ],
       ),
       body: Column(
-        children: [
+        children: <Widget>[
           Expanded(
             flex: 5,
             child: cars(context),
@@ -50,7 +50,7 @@ class _RacingGameState extends State<RacingGame> {
 
   Column cars(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.05,
         ),
@@ -62,22 +62,22 @@ class _RacingGameState extends State<RacingGame> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Padding(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * _player),
-              child: const Icon(
+              child: Icon(
                 Icons.stay_current_portrait,
-                size: 50,
+                size: MediaQuery.of(context).size.width * 0.15,
                 color: Colors.red,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * _bot),
-              child: const Icon(
+              child: Icon(
                 Icons.stay_current_portrait,
-                size: 50,
+                size: MediaQuery.of(context).size.width * 0.15,
                 color: Colors.blue,
               ),
             ),
@@ -90,11 +90,11 @@ class _RacingGameState extends State<RacingGame> {
   Row buttons(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+      children: <Widget>[
         ElevatedButton(
-          child: const Icon(
+          child: Icon(
             Icons.gamepad,
-            size: 50,
+            size: MediaQuery.of(context).size.width * 0.15,
           ),
           style: ElevatedButton.styleFrom(
             primary: Colors.red,
@@ -110,9 +110,9 @@ class _RacingGameState extends State<RacingGame> {
           },
         ),
         ElevatedButton(
-          child: const Icon(
+          child: Icon(
             Icons.gamepad,
-            size: 50,
+            size: MediaQuery.of(context).size.width * 0.15,
           ),
           style: ElevatedButton.styleFrom(
             primary: Colors.blue,
@@ -151,7 +151,7 @@ class _RacingGameState extends State<RacingGame> {
             title: (_playerScore >= _botScore)
                 ? const Text("You Win!")
                 : const Text("You Lose!"),
-            actions: [
+            actions: <Widget>[
               TextButton(
                 child: const Text("Quit"),
                 onPressed: () {

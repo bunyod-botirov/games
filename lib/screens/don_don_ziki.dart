@@ -27,9 +27,9 @@ class _ZikiGameState extends State<ZikiGame> {
             widthFactor: 1.2,
             child: Text(
               "Y: $_playerScore | B: $_botScore",
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: MediaQuery.of(context).size.width * 0.05,
               ),
             ),
           ),
@@ -68,11 +68,11 @@ class _ZikiGameState extends State<ZikiGame> {
           top: MediaQuery.of(context).size.height * 0.02,
           left: MediaQuery.of(context).size.width * 0.05,
         ),
-        child: const Text(
+        child: Text(
           "Bot:",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: MediaQuery.of(context).size.width * 0.07,
           ),
         ),
       ),
@@ -95,11 +95,11 @@ class _ZikiGameState extends State<ZikiGame> {
           top: MediaQuery.of(context).size.height * 0.02,
           left: MediaQuery.of(context).size.width * 0.05,
         ),
-        child: const Text(
+        child: Text(
           "You:",
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 25,
+            fontSize: MediaQuery.of(context).size.width * 0.07,
           ),
         ),
       ),
@@ -120,13 +120,16 @@ class _ZikiGameState extends State<ZikiGame> {
       children: <Widget>[
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-            fixedSize: const Size(80, 80),
+            fixedSize: Size(
+              MediaQuery.of(context).size.width * 0.2,
+              MediaQuery.of(context).size.height * 0.1,
+            ),
             primary: Colors.green,
             elevation: 0,
           ),
-          child: const Icon(
+          child: Icon(
             Icons.refresh,
-            size: 30,
+            size: MediaQuery.of(context).size.width * 0.1,
           ),
           onPressed: () {
             _playerScore = 0;
@@ -221,7 +224,7 @@ class _ZikiGameState extends State<ZikiGame> {
             title: (_playerScore >= _botScore)
                 ? const Text("You Win!")
                 : const Text("You Lose!"),
-            actions: [
+            actions: <Widget>[
               TextButton(
                 child: const Text("Quit"),
                 onPressed: () {

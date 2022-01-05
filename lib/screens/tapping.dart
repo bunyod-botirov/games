@@ -25,20 +25,20 @@ class _TappingGameState extends State<TappingGame> {
             widthFactor: 1.2,
             child: Text(
               "Y: $_playerScore | B: $_botScore",
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w500,
-                fontSize: 18,
+                fontSize: MediaQuery.of(context).size.width * 0.05,
               ),
             ),
           ),
         ],
       ),
       body: Column(
-        children: [
+        children: <Widget>[
           ElevatedButton(
             child: Icon(
               Icons.gamepad,
-              size: 100,
+              size: MediaQuery.of(context).size.width * 0.3,
             ),
             style: ElevatedButton.styleFrom(
               primary: Colors.red,
@@ -54,11 +54,11 @@ class _TappingGameState extends State<TappingGame> {
               setState(() {});
             },
           ),
-          Spacer(),
+          const Spacer(),
           ElevatedButton(
             child: Icon(
               Icons.gamepad,
-              size: 100,
+              size: MediaQuery.of(context).size.width * 0.3,
             ),
             style: ElevatedButton.styleFrom(
               primary: Colors.blue,
@@ -99,7 +99,7 @@ class _TappingGameState extends State<TappingGame> {
             title: (_playerScore >= _botScore)
                 ? const Text("You Win!")
                 : const Text("You Lose!"),
-            actions: [
+            actions: <Widget>[
               TextButton(
                 child: const Text("Quit"),
                 onPressed: () {

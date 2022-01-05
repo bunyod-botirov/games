@@ -8,15 +8,15 @@ class ToeGame extends StatefulWidget {
 }
 
 class _ToeGameState extends State<ToeGame> {
-  Icon _zero = const Icon(null, size: 80);
-  Icon _one = const Icon(null, size: 80);
-  Icon _two = const Icon(null, size: 80);
-  Icon _three = const Icon(null, size: 80);
-  Icon _four = const Icon(null, size: 80);
-  Icon _five = const Icon(null, size: 80);
-  Icon _six = const Icon(null, size: 80);
-  Icon _seven = const Icon(null, size: 80);
-  Icon _eight = const Icon(null, size: 80);
+  Icon? _zero;
+  Icon? _one;
+  Icon? _two;
+  Icon? _three;
+  Icon? _four;
+  Icon? _five;
+  Icon? _six;
+  Icon? _seven;
+  Icon? _eight;
   int _playerScore = 0;
   int _botScore = 0;
   int _i = 0;
@@ -58,11 +58,11 @@ class _ToeGameState extends State<ToeGame> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         ElevatedButton(
-          child: const Text(
+          child: Text(
             "Reset",
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 25,
+              fontSize: MediaQuery.of(context).size.width * 0.07,
             ),
           ),
           style: ElevatedButton.styleFrom(
@@ -80,10 +80,10 @@ class _ToeGameState extends State<ToeGame> {
         ),
         Text(
           "You: $_playerScore | Bot: $_botScore",
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.blue,
             fontWeight: FontWeight.w500,
-            fontSize: 25,
+            fontSize: MediaQuery.of(context).size.width * 0.07,
           ),
         ),
       ],
@@ -96,25 +96,28 @@ class _ToeGameState extends State<ToeGame> {
       children: <Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             ElevatedButton(
               child: _zero,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[0] == 5) {
                   _algoritm[0] = (_i % 2 == 0) ? 1 : 0;
                   _zero = (_algoritm[0] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -126,20 +129,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _one,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[1] == 5) {
                   _algoritm[1] = (_i % 2 == 0) ? 1 : 0;
                   _one = (_algoritm[1] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -151,20 +157,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _two,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[2] == 5) {
                   _algoritm[2] = (_i % 2 == 0) ? 1 : 0;
                   _two = (_algoritm[2] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -176,25 +185,28 @@ class _ToeGameState extends State<ToeGame> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             ElevatedButton(
               child: _three,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[3] == 5) {
                   _algoritm[3] = (_i % 2 == 0) ? 1 : 0;
                   _three = (_algoritm[3] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -206,20 +218,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _four,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[4] == 5) {
                   _algoritm[4] = (_i % 2 == 0) ? 1 : 0;
                   _four = (_algoritm[4] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -231,20 +246,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _five,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[5] == 5) {
                   _algoritm[5] = (_i % 2 == 0) ? 1 : 0;
                   _five = (_algoritm[5] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -256,25 +274,28 @@ class _ToeGameState extends State<ToeGame> {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+          children: <Widget>[
             ElevatedButton(
               child: _six,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[6] == 5) {
                   _algoritm[6] = (_i % 2 == 0) ? 1 : 0;
                   _six = (_algoritm[6] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -286,20 +307,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _seven,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[7] == 5) {
                   _algoritm[7] = (_i % 2 == 0) ? 1 : 0;
                   _seven = (_algoritm[7] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -311,20 +335,23 @@ class _ToeGameState extends State<ToeGame> {
               child: _eight,
               style: ElevatedButton.styleFrom(
                 primary: Colors.green,
-                fixedSize: const Size(110, 110),
+                fixedSize: Size(
+                  MediaQuery.of(context).size.width * 0.3,
+                  MediaQuery.of(context).size.width * 0.3,
+                ),
                 padding: const EdgeInsets.all(0),
               ),
               onPressed: () {
                 if (_algoritm[8] == 5) {
                   _algoritm[8] = (_i % 2 == 0) ? 1 : 0;
                   _eight = (_algoritm[8] == 1)
-                      ? const Icon(
+                      ? Icon(
                           Icons.close,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         )
-                      : const Icon(
+                      : Icon(
                           Icons.circle_outlined,
-                          size: 80,
+                          size: MediaQuery.of(context).size.width * 0.25,
                         );
                   _i++;
                   backend();
@@ -412,7 +439,7 @@ class _ToeGameState extends State<ToeGame> {
             title: (_playerScore >= _botScore)
                 ? const Text("You Win!")
                 : const Text("You Lose!"),
-            actions: [
+            actions: <Widget>[
               TextButton(
                 child: const Text("Quit"),
                 onPressed: () {
@@ -438,15 +465,15 @@ class _ToeGameState extends State<ToeGame> {
   }
 
   void reset() {
-    _zero = const Icon(null, size: 80);
-    _one = const Icon(null, size: 80);
-    _two = const Icon(null, size: 80);
-    _three = const Icon(null, size: 80);
-    _four = const Icon(null, size: 80);
-    _five = const Icon(null, size: 80);
-    _six = const Icon(null, size: 80);
-    _seven = const Icon(null, size: 80);
-    _eight = const Icon(null, size: 80);
+    _zero = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _one = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _two = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _three = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _four = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _five = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _six = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _seven = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
+    _eight = Icon(null, size: MediaQuery.of(context).size.width * 0.25);
     _i = 0;
     _algoritm = [5, 5, 5, 5, 5, 5, 5, 5, 5];
   }
